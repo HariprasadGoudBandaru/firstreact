@@ -37,7 +37,7 @@ class Users extends Component{
              return(
                 <div>
                 <h5>Your in User Component </h5>
-                <Link to='/hari'> Back</Link>
+                <Link to='/hari'> Go Back</Link>
                 </div>
             );
         }   
@@ -47,5 +47,5 @@ class Users extends Component{
 
 const Hari = (props) => (
     <div>{props.hi}</div>
-)
+) 
 export default Users;
