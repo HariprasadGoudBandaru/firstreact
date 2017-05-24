@@ -29,7 +29,7 @@ class Users extends Component{
             return(
                 <div>
                 <h5>{user.title}</h5>
-                <Link to='/hari'> Back</Link>
+                <Link to='/hari'>Go Back</Link>
                 <Hari hi={user.id} />
                 </div>
             );
