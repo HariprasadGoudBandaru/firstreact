@@ -29,7 +29,7 @@ class Users extends Component{
             return(
                 <div>
                 <h5>{user.title}</h5>
-                <Link to='/hari'>Go Back</Link>
+                <Link to='/hari'>Go to Back</Link>
                 <Hari hi={user.id} />
                 </div>
             );
@@ -37,7 +37,7 @@ class Users extends Component{
              return(
                 <div>
                 <h5>Your in User Component </h5>
-                <Link to='/hari'> Go Back</Link>
+                <Link to='/hari'> Go to Back</Link>
                 </div>
             );
         }   
