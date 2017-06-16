@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import {Link } from 'react-router'
-import $ from  'jquery'
+import React, { Component } from 'react' 
+import $ from  'jquery' 
+import urls from './GlobalRend';
 class Users extends Component{
     constructor(props){
         super(props);
@@ -12,7 +12,7 @@ class Users extends Component{
     componentDidMount(){
         $.ajax({
             type:'GET',
-            url:'https://jsonplaceholder.typicode.com/posts/1',
+            url:urls.users_list_url+'.json',
             success:function(res){
                 this.setState({
                     userDetails:res
@@ -22,30 +22,22 @@ class Users extends Component{
     }
 
     render(){
-        let userDetails;
-
-        if(typeof this.state.userDetails.title === 'string'){
-            let user = this.state.userDetails;
-            return(
-                <div>
-                <h5>{user.title}</h5>
-                <Link to='/hari'>Go to Back</Link>
-                <Hari hi={user.id} />
-                </div>
-            );
-        }else{
-             return(
-                <div>
-                <h5>Your in User Component </h5>
-                <Link to='/hari'> Go to Back</Link>
-                </div>
-            );
-        }   
-       
-    }
+        let userDetails=this.state.userDetails;
+        let ns;
+        console.log(userDetails)
+        if(userDetails.users){
+            ns = userDetails.users.map(user=>{
+                return(
+                    <div key={user.User.id}>{user.User.firstname}<br/></div>
+                )
+            })
+        }
+        return(
+            <div>
+                {ns}
+            </div>
+        )
+   }
 }
-
-const Hari = (props) => (
-    <div>{props.hi}</div>
-) 
+ 
 export default Users;
